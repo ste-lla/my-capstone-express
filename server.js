@@ -22,7 +22,10 @@ app.get('/users', (req, res) => {
     res.json({})
 })
 
-app.post('/login', (req, res) => {
+
+
+//    ALLOW USER TO REGISTER
+app.post('/api/register', (req, res) => {
     //console.log('Testing POST 123');
     db.user.create({
         firstName: req.body.firstName,
@@ -33,7 +36,26 @@ app.post('/login', (req, res) => {
         console.log(data);
         res.json({});
     })
-})
+});
+
+
+
+//     ALLOW USER TO LOGIN
+app.post('/api/login', (req, res) => {
+    db.user.findOne({ where: { email: req.body.email } }).then((user) => {
+      if (user) {
+        let encrypted_password = encryptPassword(req.body.password);
+        
+        if (user.password == encrypted_password) {  //Here, user.password is pulling from your database. You named your column password
+          res.json({ login: true });
+        } else {
+          res.json({ login: false });
+        }
+      } else {
+        res.json({ login: false })
+      }
+    })
+  });
 
       
     
