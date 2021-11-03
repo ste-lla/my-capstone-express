@@ -76,7 +76,14 @@ app.delete('/users', (req, res) => {
 
 
 
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Listening on port ${process.env.PORT || '3001'}`)
+})
 
-app.listen(3001, () => {
-    console.log('Listening on port 3001')
-  })
+
+/* 
+Orig app.listen before deploying backend
+    app.listen(3001, () => {
+        console.log('Listening on port 3001')
+    }) 
+*/
