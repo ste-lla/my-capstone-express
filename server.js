@@ -8,20 +8,12 @@ const encryptPassword = require("./encryption"); //This is for the bcryptjs we i
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.options("*", cors());
+
 
 /*
 DON'T FORGET !!!!
     ON MIGRATION FILE(S) W/ PASSWORDS ADD--> const encryptPassword = require('../encryption');
  */
-
-
-  
-app.get("/users", (req, res) => {
-  console.log("Testing GET 123");
-  res.json({});
-});
-
 
 
 
