@@ -122,6 +122,16 @@ app.put("/api/resetPassword", (req, res) => {
 
 
 
+//  ADD EVENTS TO INTERESTED IN LIST
+app.post('api/interested/:id', (req, res) => {
+  db.user.findAll({where: {id: req.params.id}}).then((user) => {
+    console.log(user[0]);
+    res.json(user[0]);
+  })
+})
+
+
+
 
 app.delete("/users", (req, res) => {
   console.log("Testing DELETE 123");
