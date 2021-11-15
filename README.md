@@ -46,7 +46,7 @@ $ npm start
 There are several improvements that can be made to this app. Feel free to 
 find an area for improvement or something that can be added and contribute your ideas!
 
-Find React.js Repository for this project [here](https://github.com/ste-lla/my-capstone-express)
+Find React.js Repository for this project [here](https://github.com/ste-lla/react-capstone-app)
 
 1. Clone repo and create a new branch 
 2. Make your desired changes and test them
