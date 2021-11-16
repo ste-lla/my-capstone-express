@@ -54,7 +54,7 @@ app.post("/api/login", (req, res) => {
   db.user.findAll({ where: { email: req.body.email } }).then((users) => {
     if (users.length == 0) {
       res.status(404).json({ 
-        message: "User does not exist. Please visit the Registration page to create an account.", 
+        message: "User does not exist. Please visit the 'Sign Up' page to create an account.", 
         login: false 
       });
       return;
